@@ -1,12 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { IntlProvider } from 'react-intl';
+import { defineMessages, IntlProvider } from 'react-intl';
 import { PipelineRuns } from '@tektoncd/dashboard-components';
+
+const messages = defineMessages({
+  'dashboard.pipelineRuns.transitionTime': 'Last Update'
+});
 
 function App() {
   return (
     <Router>
-      <IntlProvider>
+      <IntlProvider messages={messages}>
         <PipelineRuns
           pipelineName="Pipeline Name"
           selectedNamespace="default"
